@@ -7,22 +7,22 @@ This project is a simplified feel of Swagger, which helps you test APIs in your 
 1. Download zip and extract locally.
 2. Open api.json file (example template) to provide necessary information. <br>
    
-   - info.title : Your project name
-   - info.description : Your project description
-   - host: Your ExpressJS project's domain address
-   - basePath: Your project base route
-   - schemes: Protocols your project uses (array)
-   - paths:
-     - *endpoint*: add parameter in curly braces, {}
-     - *HTTP method*: get, post, put, or delete
-     - paths.*endpoint*.*HTTP method*.tags: the purpose of this endpoint
-     - paths.*endpoint*.*HTTP method*.summary: the summary of this endpoint
-     - paths.*endpoint*.*HTTP method*.parameters: (👉🏼if there is no parameter, skip)
-       - name: parameter name
-       - in: parameter type (select from 3 types: query, path, body)
-       - required: true or false
-       - description: the description of your parameter
-     - paths.*endpoint*.*HTTP method*.responses: "*HTTP status code*": {"description":"*description of the HTTP status code*"}
+   - `info.title` : Your project name
+   - `info.description` : Your project description
+   - `host`: Your ExpressJS project's domain address
+   - `basePath`: Your project base route
+   - `schemes`: Protocols your project uses (array)
+   - `paths`:
+     - `*endpoint*`: add parameter in curly braces, {}
+     - `*HTTP method*`: get, post, put, or delete
+     - `paths.*endpoint*.*HTTP method*.tags`: the purpose of this endpoint
+     - `paths.*endpoint*.*HTTP method*.summary`: the summary of this endpoint
+     - `paths.*endpoint*.*HTTP method*.parameters`: (👉🏼if there is no parameter, skip)
+       - `name`: parameter name
+       - `in`: parameter type (select from 3 types: query, path, body)
+       - `required`: Boolean
+       - `description`: the description of your parameter
+     - `paths.*endpoint*.*HTTP method*.responses`: "*HTTP status code*": {"description":"*description of the HTTP status code*"}
     
 3. If your ExpressJS project doesn't have [cors](https://expressjs.com/en/resources/middleware/cors.html) installed, `npm install cors` <br><br>
   [Example of cors configuration]
