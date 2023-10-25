@@ -51,6 +51,7 @@ app.listen(80, function () {
 
 ## Current Limitation
 - HTTP methods avaialble are GET, POST, PUT, DELETE.
+- Same endpoint names with different HTTP methods doesn't display both.
   
        
      
