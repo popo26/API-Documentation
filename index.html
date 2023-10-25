@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Documentation</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <template id="each-route-template">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <div class="route-div">
+            <div class="sub-info-div">
+              <!-- <button class="route-http-method btn btn-light btn-sm"></button> -->
+              <span class="route-http-method"></span>
+
+              <code class="route-tags"></code>
+            </div>
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button route-header"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Accordion Item #1
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body route-body">
+              <div class="route-id"></div>
+              <h5 class="route-summary"></h5>
+              <button class="try-out-btn btn btn-outline-danger btn-sm">
+                Try Out
+              </button>
+              <hr />
+              <div class="route-param-div">
+                <form class="route-parameters">
+                  <button class="run-btn btn btn-dark">Run</button>
+                  <span class="run-message"></span>
+                </form>
+              </div>
+              <hr />
+              <div>
+                <code class="route-result-status-code"></code>
+                <p class="route-result"></p>
+              </div>
+
+              <div>
+                <ul class="route-http-code"></ul>
+              </div>
+              <ul class="route-responses"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="page-container">
+      <div class="content-wrap">
+        <section id="general-info">
+          <h1 class="project-title">Project Title</h1>
+          <pre class="base-url">Base URL: 0.0.0.0:3000/</pre>
+          <h3 class="sub-title">Sub Title</h3>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle scheme-btn"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Scheme
+            </button>
+            <ul class="dropdown-menu schemes"></ul>
+          </div>
+        </section>
+
+        <div id="route-list"></div>
+      </div>
+      <footer>
+        <a href="https://github.com/popo26" target="_blank"
+          ><iconify-icon icon="brandico:github" class="git-hub"></iconify-icon
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ai-oakenfull-319297163/"
+          target="_blank"
+          ><iconify-icon
+            icon="teenyicons:linkedin-solid"
+            class="linked-in"
+          ></iconify-icon
+        ></a>
+      </footer>
+    </div>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>

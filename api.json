@@ -1,0 +1,165 @@
+{
+  "info": {
+    "title": "Friends Project",
+    "description": "My Friends Project Application API"
+  },
+  "host": "127.0.0.1:3000",
+  "basePath": "/",
+  "schemes": ["http", "https", "ftp"],
+
+  "paths": {
+    "/friends/all": {
+      "get": {
+        "tags": ["All Friends Fetching Service"],
+        "summary": "Fetch all friends",
+
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Ther server cannot be found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/friends/filter": {
+      "get": {
+        "tags": ["Friend Filtering Service"],
+        "summary": "Fetch all friends",
+        "parameters": [
+          {
+            "name": "gender",
+            "in": "query",
+            "required": false,
+            "description": "Friend's gender"
+          },
+          {
+            "name": "letter",
+            "in": "query",
+            "required": false,
+            "description": "First character of friend's name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/friends/info": {
+      "get": {
+        "tags": ["Header Info Fetching Service"],
+        "summary": "Fetch some of header info",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/friends/find/{id}": {
+      "get": {
+        "tags": ["A Friend Fetching Service"],
+        "summary": "Fetch a friend by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Friend Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/friends": {
+      "post": {
+        "tags": ["Posting New Friend Service"],
+        "summary": "Post a New Friend.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "required": true,
+            "description": "Friend Name"
+          },
+          {
+            "name": "gender",
+            "in": "body",
+            "required": true,
+            "description": "Friend Gender"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/friends/{id}": {
+      "put": {
+        "tags": ["Editing(Putting) Service"],
+        "summary": "Edit(Put) an Existing Friend",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Friend ID"
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "required": false,
+            "description": "Friend Name"
+          },
+          {
+            "name": "gender",
+            "in": "body",
+            "required": false,
+            "description": "Friend Gender"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/friends/delete/{id}": {
+      "delete": {
+        "tags": ["Deleting Friend Service"],
+        "summary": "Delete a Friend",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Friend ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
