@@ -10,9 +10,8 @@
   "paths": {
     "/friends/all": {
       "get": {
-        "tags": ["All Friends Fetching Service"],
+        "tags": "All Friends Fetching Service",
         "summary": "Fetch all friends",
-
         "responses": {
           "200": {
             "description": "Success"
@@ -28,7 +27,7 @@
     },
     "/friends/filter": {
       "get": {
-        "tags": ["Friend Filtering Service"],
+        "tags": "Friend Filtering Service",
         "summary": "Fetch all friends",
         "parameters": [
           {
@@ -54,7 +53,7 @@
 
     "/friends/info": {
       "get": {
-        "tags": ["Header Info Fetching Service"],
+        "tags": "Header Info Fetching Service",
         "summary": "Fetch some of header info",
         "responses": {
           "200": {
@@ -66,7 +65,7 @@
 
     "/friends/find/{id}": {
       "get": {
-        "tags": ["A Friend Fetching Service"],
+        "tags": "A Friend Fetching Service",
         "summary": "Fetch a friend by ID.",
         "parameters": [
           {
@@ -86,7 +85,7 @@
 
     "/friends": {
       "post": {
-        "tags": ["Posting New Friend Service"],
+        "tags": "Posting New Friend Service",
         "summary": "Post a New Friend.",
         "parameters": [
           {
@@ -112,7 +111,7 @@
 
     "/friends/{id}": {
       "put": {
-        "tags": ["Editing(Putting) Service"],
+        "tags": "Editing(Putting) Service",
         "summary": "Edit(Put) an Existing Friend",
         "parameters": [
           {
@@ -144,7 +143,7 @@
 
     "/friends/delete/{id}": {
       "delete": {
-        "tags": ["Deleting Friend Service"],
+        "tags": "Deleting Friend Service",
         "summary": "Delete a Friend",
         "parameters": [
           {
