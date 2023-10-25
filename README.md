@@ -4,7 +4,7 @@ This project is a simplified feel of Swagger, which helps you test APIs in your 
 
 ## Setup
 
-1. Download zip and extract locally.
+1. Download zip and extract locally. Open with your text editor software.
 2. Open api.json file (example template) to provide necessary information. <br>
    
    - `info.title` : Your project name
