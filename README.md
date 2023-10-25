@@ -5,7 +5,8 @@ This project is a simplified feel of Swagger, which helps you test APIs in your 
 ## Setup
 
 1. Download zip and extract locally. Open with your text editor software.
-2. Open api.json file (example template) to provide necessary information. <br>
+2. In the terminal, navigate to the root directory of API-Documentation where you see index.html. Run `npm i` to install dependencies.
+3. Open api.json file (example template) to provide necessary information. <br>
    
    - `info.title` : Your project name
    - `info.description` : Your project description
@@ -24,7 +25,7 @@ This project is a simplified feel of Swagger, which helps you test APIs in your 
        - `description`: the description of your parameter
      - `paths.*endpoint*.*HTTP method*.responses`: "*HTTP status code*": {"description":"*description of the HTTP status code*"}
     
-3. If your ExpressJS project doesn't have [cors](https://expressjs.com/en/resources/middleware/cors.html) installed, `npm install cors` <br><br>
+4. If your ExpressJS project doesn't have [cors](https://expressjs.com/en/resources/middleware/cors.html) installed, `npm install cors` <br><br>
   [Example of cors configuration]
 ```
 var express = require('express')
@@ -45,7 +46,7 @@ app.listen(80, function () {
 })
 ```
 4. Start your ExpressJS project.
-5. Go to API-Documentation-App directory in a terminal. run this command `npm start`, which should display all the configurations in api.json. Check domain address and confirm it's the same in `origin` value in corsOptions at Step3.
+5. In the terminal, go to API-Documentation's root directory. run this command `npm start`, which should display all the configurations in api.json. Check domain address and confirm it's the same in `origin` value in corsOptions at Step3.
 
 
 ## Current Limitation
