@@ -57,6 +57,7 @@ footer {
 .sub-info-div {
   text-align: left;
   background-color: #101010;
+  padding-left: 10px;
 }
 
 .route-param-div {
@@ -134,7 +135,8 @@ input {
 .delete {
   border: 2px solid #808080;
   border-radius: 6px;
-  padding: 3px;
+  padding: 4px;
+  margin-right: 6px;
 }
 
 /* icons */

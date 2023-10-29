@@ -1,5 +1,4 @@
 //++++++++++++++++++++++++++Function to Remove Special Characters From Original Endpoints++++++++++++++++++++++++++++++++++++++++++++++
-//not working yet
 export default function changeRoute(string) {
   let result = [];
   for (let x in string) {

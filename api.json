@@ -4,12 +4,12 @@
     "description": "My Friends Project Application API"
   },
   "host": "127.0.0.1:3000",
-  "basePath": "/",
+  "basePath": "/friends",
   "schemes": ["http", "https", "ftp"],
 
   "paths": [
     {
-      "/friends": {
+      "/": {
         "get": {
           "tags": "All Friends Fetching Service",
           "summary": "Fetch all friends",
@@ -28,7 +28,7 @@
       }
     },
     {
-      "/friends/filter": {
+      "/filter": {
         "get": {
           "tags": "Friend Filtering Service",
           "summary": "Fetch all friends",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "/friends/info": {
+      "/info": {
         "get": {
           "tags": "Header Info Fetching Service",
           "summary": "Fetch some of header info",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "/friends/{id}": {
+      "/{id}": {
         "get": {
           "tags": "A Friend Fetching Service",
           "summary": "Fetch a friend by ID.",
@@ -89,7 +89,7 @@
       }
     },
     {
-      "/friends": {
+      "/": {
         "post": {
           "tags": "Posting New Friend Service",
           "summary": "Post a New Friend.",
@@ -116,7 +116,7 @@
       }
     },
     {
-      "/friends/{id}": {
+      "/{id}": {
         "put": {
           "tags": "Editing(Putting) Service",
           "summary": "Edit(Put) an Existing Friend",
@@ -149,7 +149,7 @@
       }
     },
     {
-      "/friends/{id}": {
+      "/{id}": {
         "delete": {
           "tags": "Deleting Friend Service",
           "summary": "Delete a Friend",
