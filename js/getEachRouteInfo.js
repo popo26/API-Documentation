@@ -35,7 +35,9 @@ export default function getEachRouteInfo(data) {
     newRouteHeader,
     template.querySelector("#collapseOne"),
     template.querySelector(".route-header"),
-    httpMethod
+    httpMethod,
+    template.querySelector("#accordionExample"),
+
   );
 
   // changeAccordionBehaviour(
@@ -75,44 +77,91 @@ export default function getEachRouteInfo(data) {
   template.querySelector(".route-summary").innerText = objectContent["summary"];
   template.querySelector(".route-id").innerText = newRouteHeader;
   // Add individual classes
-  routeHttpMethod.classList.add(`httpMethod${newRouteHeader}`);
-  template.querySelector(".try-out-btn").classList.add(`${newRouteHeader}`);
-  template.querySelector(".run-btn").classList.add(`run${newRouteHeader}`);
+  routeHttpMethod.classList.add(`httpMethod${newRouteHeader}${httpMethod}`);
+
+  // routeHttpMethod.classList.add(`httpMethod${newRouteHeader}`);
+  template.querySelector(".try-out-btn").classList.add(`${newRouteHeader}${httpMethod}`);
+
+  // template.querySelector(".try-out-btn").classList.add(`${newRouteHeader}`);
+  template.querySelector(".run-btn").classList.add(`run${newRouteHeader}${httpMethod}`);
+
+  // template.querySelector(".run-btn").classList.add(`run${newRouteHeader}`);
+
   template
-    .querySelector(".run-message")
-    .classList.add(`runMsg${newRouteHeader}`);
-  template
-    .querySelector(".route-param-div")
-    .classList.add(`paramDiv${newRouteHeader}`);
-  template
-    .querySelector(".route-result")
-    .classList.add(`result${newRouteHeader}`);
-  template
-    .querySelector(".route-result-status-code")
-    .classList.add(`resultStatus${newRouteHeader}`);
+  .querySelector(".run-message")
+  .classList.add(`runMsg${newRouteHeader}${httpMethod}`);
+template
+  .querySelector(".route-param-div")
+  .classList.add(`paramDiv${newRouteHeader}${httpMethod}`);
+template
+  .querySelector(".route-result")
+  .classList.add(`result${newRouteHeader}${httpMethod}`);
+template
+  .querySelector(".route-result-status-code")
+  .classList.add(`resultStatus${newRouteHeader}${httpMethod}`);
+
+  // template
+  //   .querySelector(".run-message")
+  //   .classList.add(`runMsg${newRouteHeader}`);
+  // template
+  //   .querySelector(".route-param-div")
+  //   .classList.add(`paramDiv${newRouteHeader}`);
+  // template
+  //   .querySelector(".route-result")
+  //   .classList.add(`result${newRouteHeader}`);
+  // template
+  //   .querySelector(".route-result-status-code")
+  //   .classList.add(`resultStatus${newRouteHeader}`);
 
   // --------------------Populate Prams---------------------------
+
   paramCount = populateParams(
     paramCount,
     params,
     template.querySelector(".route-parameters"),
-    newRouteHeader
+    newRouteHeader,
+    httpMethod
   );
+
+  // paramCount = populateParams(
+  //   paramCount,
+  //   params,
+  //   template.querySelector(".route-parameters"),
+  //   newRouteHeader
+  // );
 
   // --------------------Clickng Try-Out button to display Run button------------------
+
   clickTryOutBtnToShowRunBtn(
     newRouteHeader,
-    template.querySelector(`.${newRouteHeader}`)
+    template.querySelector(`.${newRouteHeader}${httpMethod}`),
+    httpMethod
   );
 
+  // clickTryOutBtnToShowRunBtn(
+  //   newRouteHeader,
+  //   template.querySelector(`.${newRouteHeader}`)
+  // );
+
   //------------------------Run button to collect params and execute test route-----------------
+
   clickRunBtn(
     newRouteHeader,
     httpMethod[0],
-    template.querySelector(`.run${newRouteHeader}`),
+    template.querySelector(`.run${newRouteHeader}${httpMethod}`),
     paramCount,
     routeHeader,
-    params
+    params,
+    httpMethod
   );
+
+  // clickRunBtn(
+  //   newRouteHeader,
+  //   httpMethod[0],
+  //   template.querySelector(`.run${newRouteHeader}`),
+  //   paramCount,
+  //   routeHeader,
+  //   params
+  // );
   document.querySelector("#route-list").appendChild(template);
 }

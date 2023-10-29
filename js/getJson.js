@@ -11,7 +11,7 @@ export default function getJson() {
       //console.log(routeInfos)
       //let entries = Object.entries(routeInfos);
       for (let key of routeInfos) {
-        console.log(Object.values(Object.values(key)[0])[0]['responses'])
+        //console.log(Object.values(Object.values(key)[0])[0]['responses'])
         getEachRouteInfo(key);
       }
     });
