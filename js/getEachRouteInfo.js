@@ -11,20 +11,38 @@ export default function getEachRouteInfo(data) {
     .content.cloneNode(true);
 
   // Populate data from config.json
-  const objectContent = data[1][Object.keys(Object.values(data)[1])];
+  const objectContent = Object.values(Object.values(data)[0])[0];
   const params = objectContent["parameters"];
-  const httpMethod = Object.keys(Object.values(data)[1]);
-  const routeHeader = Object.values(data)[0];
+  const httpMethod = Object.keys(Object.values(data)[0]);
+  const routeHeader = Object.keys(data)[0];
   const newRouteHeader = changeRoute(routeHeader);
-  const responsesObj = Object.entries(objectContent["responses"]);
+  const responsesObj = objectContent["responses"];
+
   let paramCount = 0;
 
+
+  // const objectContent = data[1][Object.keys(Object.values(data)[1])];
+  // const params = objectContent["parameters"];
+  // const httpMethod = Object.keys(Object.values(data)[1]);
+  // const routeHeader = Object.values(data)[0];
+  // const newRouteHeader = changeRoute(routeHeader);
+  // const responsesObj = Object.entries(objectContent["responses"]);
+  // let paramCount = 0;
+
   // --------------Change Accordion Behaviour-----------------------------
+
   changeAccordionBehaviour(
     newRouteHeader,
     template.querySelector("#collapseOne"),
-    template.querySelector(".route-header")
+    template.querySelector(".route-header"),
+    httpMethod
   );
+
+  // changeAccordionBehaviour(
+  //   newRouteHeader,
+  //   template.querySelector("#collapseOne"),
+  //   template.querySelector(".route-header")
+  // );
 
   //------------------Setup Template Nodes---------------------------------
   const routeHttpMethod = template.querySelector(".route-http-method");
@@ -42,10 +60,15 @@ export default function getEachRouteInfo(data) {
 
   // Populate responses objects
   const httpCodeDiv = template.querySelector(".route-http-code");
-  for (let [key, value] of responsesObj) {
+  for (let key in responsesObj) {
+    
     const node = document.createElement("li");
+    // node.classList.add(`httpCode${newRouteHeader}${key}`);
     node.classList.add(`httpCode${newRouteHeader}${key}`);
-    node.innerHTML = `<code>${key}</code>: ${Object.values(value)}`;
+
+    // node.innerHTML = `<code>${key}</code>: ${Object.values(value)}`;
+    node.innerHTML = `<code>${key}</code>: ${Object.values(responsesObj[key])}`;
+
     httpCodeDiv.appendChild(node);
   }
 
