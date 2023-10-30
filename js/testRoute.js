@@ -47,8 +47,13 @@ function displayError(err, className, httpMethod) {
 }
 
 //+++++++++++++++++++++++++++++++++++++ Function to Fetch Methods++++++++++++++++++++++++++++++++++++++++++++++
-
-export default function testRoute(route, className, method, parameters, httpMethod) {
+export default function testRoute(
+  route,
+  className,
+  method,
+  parameters,
+  httpMethod
+) {
   const selectedScheme = setSchemeForFetch();
   const headerContent = {
     "Content-Type": "application/json",
@@ -70,11 +75,10 @@ export default function testRoute(route, className, method, parameters, httpMeth
     for (let x in parameters) {
       jsonBody[parameters[x].name] = paramValues[x];
     }
-    console.log("POST jsonBody is ",jsonBody)
     fetch(`${setSchemeForFetch()}${route}`, {
       method: "POST",
       headers: headerContent,
-      body: JSON.stringify(jsonBody)
+      body: JSON.stringify(jsonBody),
     })
       .then((response) => {
         return displayStatusCode(response, className, httpMethod);
@@ -123,9 +127,3 @@ export default function testRoute(route, className, method, parameters, httpMeth
     console.error("Not available HTTP methods(GET, POST, PUT, DELETE)");
   }
 }
-
-
-
-
-
-

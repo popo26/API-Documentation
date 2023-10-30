@@ -8,7 +8,7 @@ export default function changeRoute(string) {
       string[x] == "{" ||
       string[x] == ":"
     ) {
-      let newString = string[x].replace(string[x], "");
+      string[x].replace(string[x], "");
     } else {
       result.push(string[x]);
     }

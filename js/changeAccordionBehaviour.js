@@ -1,5 +1,4 @@
 //+++++++++++++++++++++++Accordion behaviour change to open/close individually+++++++++++++++++++++++++++
-
 export default function changeAccordionBehaviour(
   className,
   bootstrap,

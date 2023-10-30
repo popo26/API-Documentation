@@ -1,5 +1,4 @@
 //+++++++++++++++++++Function to Find Parameter Values +++++++++++++++++++++++++++++++++++++++
-
 export default function findParamsValues(classRouteHeader, httpMethod) {
   let paramEntries = [];
   if (document.querySelector(`.p${classRouteHeader}${httpMethod}`)) {
