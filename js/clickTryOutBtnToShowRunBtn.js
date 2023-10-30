@@ -12,7 +12,7 @@ export default function clickTryOutBtnToShowRunBtn(
     const runBtnMsg = document.querySelector(
       `.runMsg${className}${httpMethod}`
     );
-    const tryOutBtn = document.querySelector(`.${className}${httpMethod}`);
+    const tryOutBtn = document.querySelector(`.try${className}${httpMethod}`);
     const resultDiv = document.querySelector(
       `.result${className}${httpMethod}`
     );

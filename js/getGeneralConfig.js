@@ -23,6 +23,7 @@ function displayScheme(className) {
 export default function getGeneralConfig(data) {
   document.querySelector(".project-title").innerText = data.info.title;
   document.querySelector(".base-url").innerText = `${data.host}`;
+  document.querySelector(".base-path").innerText = `${data.basePath}`;
   document.querySelector(".sub-title").innerText = data.info.description;
   createSchemeDropdown(data);
 }

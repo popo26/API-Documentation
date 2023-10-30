@@ -70,10 +70,11 @@ export default function testRoute(route, className, method, parameters, httpMeth
     for (let x in parameters) {
       jsonBody[parameters[x].name] = paramValues[x];
     }
+    console.log("POST jsonBody is ",jsonBody)
     fetch(`${setSchemeForFetch()}${route}`, {
       method: "POST",
       headers: headerContent,
-      body: JSON.stringify(jsonBody),
+      body: JSON.stringify(jsonBody)
     })
       .then((response) => {
         return displayStatusCode(response, className, httpMethod);
