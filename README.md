@@ -14,7 +14,7 @@ This project is a simplified feel of Swagger, which helps you test APIs in your 
    - `basePath`: Your project base route
    - `schemes`: Protocols your project uses (💡 array)
    - `paths`: (💡 array of objects)
-     - `*endpoint*`: each endpoint that comes after `basePath`
+     - `*endpoint*`: each endpoint that comes after `basePath` (👉🏼 please use curly braces, {}, for path parameter. e.g, /friends/{id})
      - `*HTTP method*`: get, post, put, or delete
      - `paths.*endpoint*.*HTTP method*.tags`: the purpose of this endpoint
      - `paths.*endpoint*.*HTTP method*.summary`: the summary of this endpoint
